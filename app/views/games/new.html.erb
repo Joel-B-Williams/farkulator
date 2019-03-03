@@ -1,0 +1,10 @@
+<%= form_for :game do |f| %>
+  <%= f.label "Number of Players" %>
+  <%= f.number_field :players, within: 2..10, value: 2 %>
+  <br>
+  <%= f.label "Use rollover scoring?" %>
+  <%= f.check_box :rollover_scoring %>
+  <br>
+  <br>
+  <%= f.submit "Play!" %>
+<% end %>
