@@ -1,7 +1,23 @@
 <%= @game.id %>
-<% @players.each do |player| %>
-  <ul>
-    <li><%= player.name %></li>
-    <li>Score: <%= player.score %></li>
-  </ul>
-<% end %>
+<div class="player_area">
+  <% @players.each do |player| %>
+    <ul>
+      <li><%= player.name %></li>
+      <li>Score: <%= player.score %></li>
+    </ul>
+  <% end %>
+</div>
+
+<div class="game_area">
+  <h3><%= @game.running_total %></h3>
+  <!-- <button>Bank</button> -->
+  <!-- <button>Farkle</button> -->
+  <%= link_to "Bank", game_player_path(active_player(@game)), method: :put %>
+  <%= link_to "Farkle", game_path(@game, method: :put) %>
+</div>
+
+<div class="scores_area">
+    <% scores.each_key do |roll| %>
+      <button><%= roll %>: <%= scores[roll]%></button>
+    <% end %>
+</div>

@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   
   def show
     @game = Game.find_by(id: params[:id])
-    @players = @game.players
+    @players = @game.players.order('id ASC')
   end
 
   def new
