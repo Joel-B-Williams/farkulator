@@ -1,0 +1,7 @@
+<%= @game.id %>
+<% @players.each do |player| %>
+  <ul>
+    <li><%= player.name %></li>
+    <li>Score: <%= player.score %></li>
+  </ul>
+<% end %>
