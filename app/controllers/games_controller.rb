@@ -16,11 +16,9 @@ class GamesController < ApplicationController
     players = params[:game][:players].to_i
 
     game = Game.create(rollover_scoring: rollover)
-
+    game.create_players(players)
+    game.set_active_player
     if game.save
-      players.times do |i| 
-        game.players.create(name: "Player #{i+1}") 
-      end
       redirect_to game_path(game)
     else
       flash[:warning]="Oops!"
@@ -36,10 +34,12 @@ class GamesController < ApplicationController
     
     if params[:points] == "farkle"
       game.running_total = 0
+      game.rotate_active_player
     else
       points = params[:points].to_i
       game.running_total += points
     end
+
     
     if game.save
       redirect_to game_path(game)

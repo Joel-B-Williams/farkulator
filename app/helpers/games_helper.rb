@@ -14,8 +14,4 @@ module GamesHelper
       two_triplets: 2500
     }
   end
-
-  def active_player(game)
-    game.players.first
-  end
 end

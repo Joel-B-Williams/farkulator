@@ -3,7 +3,10 @@ class PlayersController < ApplicationController
     player = Player.find_by(id: params[:id])
     game = player.game
     player.score += game.running_total
+    
     game.running_total = 0
+    game.rotate_active_player
+
     if player.save && game.save
       redirect_to game_path(game)
     else
