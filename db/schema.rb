@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_222433) do
+ActiveRecord::Schema.define(version: 2019_03_06_034225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_03_03_222433) do
     t.boolean "rollover_scoring", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "active_player"
   end
 
   create_table "players", force: :cascade do |t|
