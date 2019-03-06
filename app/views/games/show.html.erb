@@ -12,7 +12,7 @@
   <h3><%= @game.running_total %></h3>
   <!-- <button>Bank</button> -->
   <!-- <button>Farkle</button> -->
-  <%= link_to "Bank", game_player_path(active_player(@game)), method: :put %>
+  <%= link_to "Bank", game_player_path(@game, active_player(@game)), method: :put %>
   <%= link_to "Farkle", game_path(@game, points: "farkle"), method: :put %>
 </div>
 
