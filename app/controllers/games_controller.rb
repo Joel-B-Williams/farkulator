@@ -33,9 +33,14 @@ class GamesController < ApplicationController
 
   def update
     game = Game.find_by(id: params[:id])
-    points = params[:points].to_i
-
-    game.running_total += points
+    
+    if params[:points] == "farkle"
+      game.running_total = 0
+    else
+      points = params[:points].to_i
+      game.running_total += points
+    end
+    
     if game.save
       redirect_to game_path(game)
     else
@@ -43,7 +48,7 @@ class GamesController < ApplicationController
       render show
     end
   end
-  
+
   def destroy
   end
 

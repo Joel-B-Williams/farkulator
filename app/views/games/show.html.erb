@@ -13,12 +13,11 @@
   <!-- <button>Bank</button> -->
   <!-- <button>Farkle</button> -->
   <%= link_to "Bank", game_player_path(active_player(@game)), method: :put %>
-  <%= link_to "Farkle", game_path(@game, method: :put) %>
+  <%= link_to "Farkle", game_path(@game, points: "farkle"), method: :put %>
 </div>
 
 <div class="scores_area">
-    <% scores.each_key do |roll| %>
-      <%= link_to "#{roll}: #{scores[roll]}", game_path(@game, points: scores[roll]), method: :put %>
-      <!-- <button><%= roll %>: <%= scores[roll]%></button> -->
-    <% end %>
+  <% scores.each_key do |roll| %>
+    <%= link_to "#{roll}: #{scores[roll]}", game_path(@game, points: scores[roll]), method: :put %>
+  <% end %>
 </div>
