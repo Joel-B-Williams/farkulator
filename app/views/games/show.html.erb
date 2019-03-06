@@ -18,6 +18,7 @@
 
 <div class="scores_area">
     <% scores.each_key do |roll| %>
-      <button><%= roll %>: <%= scores[roll]%></button>
+      <%= link_to "#{roll}: #{scores[roll]}", game_path(@game, points: scores[roll]), method: :put %>
+      <!-- <button><%= roll %>: <%= scores[roll]%></button> -->
     <% end %>
 </div>

@@ -30,8 +30,20 @@ class GamesController < ApplicationController
 
   def edit
   end
+
   def update
+    game = Game.find_by(id: params[:id])
+    points = params[:points].to_i
+
+    game.running_total += points
+    if game.save
+      redirect_to game_path(game)
+    else
+      flash[:warning]="Points not added!"
+      render show
+    end
   end
+  
   def destroy
   end
 
