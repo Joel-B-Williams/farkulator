@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "static#home"
 
-  resources :games
+  resources :games do
+    resources :players
+  end
 
 end
