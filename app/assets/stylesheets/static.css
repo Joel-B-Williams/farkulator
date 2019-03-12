@@ -1,0 +1,30 @@
+
+* {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  margin: 5% auto;
+  width: 10%;
+  text-align: center;
+  text-decoration: none;
+  background: #606060;
+  color: white;
+  border: solid #606060 1px;
+  border-radius: 5px;
+}
+
+header h1 {
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  background:#6ed3cf;
+  padding: 2% 0;
+  border-bottom: solid #606060 1px;
+}
+
+.list {
+  list-style: none;
+}

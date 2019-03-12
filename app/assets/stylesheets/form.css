@@ -1,0 +1,25 @@
+.new_game {
+  display: block;
+  margin: 5% auto;
+  padding: 3% 0;
+  width: 30%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: solid #606060 1px;
+  border-radius: 5px;
+  background:#6ed3cf;
+}
+
+.new_game input[type=submit]{
+  width: 20%;
+  border-radius: 5px;
+  background: #606060;
+  color: white;
+}
+
+.new_game input[type=number]{
+  border-radius: 5px;
+  text-align: center;
+  color: #606060;
+}

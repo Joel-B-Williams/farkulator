@@ -1,0 +1,46 @@
+.player_area {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+
+.game_area {
+  display: inline-block;
+  width: 45%;
+}
+
+.scores_area {
+  display: inline-block;
+  width: 25%;
+}
+
+.scores_area a {
+  width: 80%;
+  color: white;
+}
+
+.running_total {
+  text-align: center;
+  margin: 5%
+}
+
+.game_button_list {
+  margin: auto;
+  padding: 0;
+  width: 20%;
+}
+
+.game_button_list li {
+  margin: 2px 5px 5px 5px;
+  width: 100%;
+}
+
+.game_button_list a {
+  margin: 2px 5px 5px 5px;
+  background: #6ed3cf;
+  color: #606060;
+  border: solid #606060 2px;
+  border-radius: 5px;
+  width: 100%;
+}
+
