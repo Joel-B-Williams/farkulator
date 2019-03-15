@@ -26,4 +26,8 @@ class Game < ApplicationRecord
       self.active_player = players[next_player].id
     end
   end
+
+  def reset_running_total
+    self.running_total = 0
+  end
 end

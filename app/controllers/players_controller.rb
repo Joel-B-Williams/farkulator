@@ -2,9 +2,10 @@ class PlayersController < ApplicationController
   def update
     player = Player.find_by(id: params[:id])
     game = player.game
-    player.score += game.running_total
-    
-    game.running_total = 0
+
+    player.bank_score
+
+    game.reset_running_total
     game.rotate_active_player
 
     if player.save && game.save
