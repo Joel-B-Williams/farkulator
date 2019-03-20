@@ -33,7 +33,7 @@ class GamesController < ApplicationController
     game = Game.find_by(id: params[:id])
     
     if params[:points] == "farkle"
-      game.running_total = 0
+      game.reset_running_total
       game.rotate_active_player
     else
       points = params[:points].to_i
