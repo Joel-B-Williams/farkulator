@@ -6,7 +6,7 @@ class Game < ApplicationRecord
 
   def create_players(num_players)
     num_players.times do |i| 
-      self.players.create(name: "Player #{i+1}") 
+      players.create(name: "Player #{i+1}") 
     end
   end
 
@@ -29,5 +29,9 @@ class Game < ApplicationRecord
 
   def reset_running_total
     self.running_total = 0
+  end
+
+  def rollover?
+    self.rollover_scoring
   end
 end

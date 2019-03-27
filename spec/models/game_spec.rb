@@ -23,6 +23,15 @@ RSpec.describe Game, type: :model do
     it "defaults to running total 0" do
       expect(Game.new.running_total).to be 0
     end
+    
+    it ".rollover?" do
+      rollover_game = Game.create(rollover_scoring: true)
+      no_rollover_game = Game.create(rollover_scoring: false)
+      default_game = Game.create
+      expect(rollover_game.rollover?).to be true
+      expect(no_rollover_game.rollover?).to be false
+      expect(default_game.rollover?).to be false
+    end
   end
 
   context "interacts with players" do

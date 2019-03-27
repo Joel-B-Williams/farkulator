@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
 
     player.bank_score
 
-    game.reset_running_total
+    game.reset_running_total unless game.rollover?
     game.rotate_active_player
 
     if player.save && game.save
